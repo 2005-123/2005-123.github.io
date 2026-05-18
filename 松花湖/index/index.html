@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="复刻湖畔自然盛景，匠心打造湖景地标文创皂。揽湖光万顷，藏松花清宁。" />
+  <title>松花湖皂 | 揽湖光万顷 藏松花清宁</title>
+  <link rel="preconnect" href="https://fonts.googleapis.cn">
+  <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin>
+  <link href="https://fonts.googleapis.cn/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lake: {
+              50: '#f0f9fa', 100: '#d5eef0', 200: '#a8dde2', 300: '#6ec5cd',
+              400: '#3aabb6', 500: '#1a8f9c', 600: '#0e7490', 700: '#0c5d75',
+              800: '#0f4b5f', 900: '#113f50'
+            },
+            pine: {
+              50: '#f2f8f2', 100: '#dde9dd', 200: '#b7d3b8', 300: '#88b589',
+              400: '#5e9760', 500: '#3f7b41', 600: '#2f6231', 700: '#274f28',
+              800: '#214022', 900: '#1b351d'
+            },
+            'amber-gold': '#c9952c',
+            'amber-light': '#f5e6b8'
+          },
+          fontFamily: {
+            serif: ['"Noto Serif SC"', '"Songti SC"', '"SimSun"', 'Georgia', 'serif'],
+            sans: ['"PingFang SC"', '"Hiragino Sans GB"', '"Microsoft YaHei"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Base */
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, sans-serif; background: #f0f9fa; color: #113f50; margin: 0; }
+
+    /* Animations */
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    @keyframes fadeInUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes bounce-dot { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    .animate-bounce-dot { animation: bounce-dot 1.5s ease-in-out infinite; }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f0f9fa; }
+    ::-webkit-scrollbar-thumb { background: #a8dde2; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #6ec5cd; }
+
+    /* Hero background */
+    .hero-bg {
+      background-image: url('https://coze-coding-project.tos.coze.site/coze_storage_7640786353973723163/image/generate_image_a774bf2e-7662-48a5-9d12-9a18ded6528c.jpeg?sign=1810546633-cc818150b1-0-93e4167d4850f76243c3e434a16e9fe5e62c10ae1a8fe7d80729e11a83809487');
+      background-size: cover; background-position: center; background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="font-serif text-lg tracking-widest text-white transition-colors" id="nav-logo">松花湖皂</a>
+      <div class="hidden md:flex items-center gap-6" id="nav-links">
+        <a href="#origin" class="text-sm tracking-wide text-white/70 hover:text-lake-400 transition-colors">地标溯源</a>
+        <a href="#design" class="text-sm tracking-wide text-white/70 hover:text-lake-400 transition-colors">设计理念</a>
+        <a href="#ingredients" class="text-sm tracking-wide text-white/70 hover:text-lake-400 transition-colors">核心成分</a>
+        <a href="#experience" class="text-sm tracking-wide text-white/70 hover:text-lake-400 transition-colors">使用体验</a>
+        <a href="#culture" class="text-sm tracking-wide text-white/70 hover:text-lake-400 transition-colors">文化寓意</a>
+        <a href="#selling-points" class="text-sm tracking-wide text-white/70 hover:text-lake-400 transition-colors">核心卖点</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== BANNER ===== -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 hero-bg"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-lake-900/60 via-lake-800/40 to-lake-900/70"></div>
+
+    <!-- Water ripple decorations -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-1/2 left-1/4 w-64 h-64 rounded-full border border-white/10 animate-float"></div>
+      <div class="absolute top-1/3 right-1/4 w-48 h-48 rounded-full border border-white/10 animate-float" style="animation-delay:2s"></div>
+      <div class="absolute bottom-1/3 left-1/2 w-32 h-32 rounded-full border border-white/10 animate-float" style="animation-delay:4s"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <div class="reveal flex items-center justify-center gap-4 mb-8">
+        <span class="block w-16 h-px bg-white/40"></span>
+        <span class="text-white/60 text-sm tracking-[0.3em] font-light">松花湖皂</span>
+        <span class="block w-16 h-px bg-white/40"></span>
+      </div>
+
+      <h1 class="reveal font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight tracking-wider mb-6" style="text-shadow:0 2px 20px rgba(0,0,0,0.3)">
+        揽湖光万顷<br><span class="mt-2 block">藏松花清宁</span>
+      </h1>
+
+      <p class="reveal text-white/85 text-base sm:text-lg md:text-xl leading-relaxed tracking-widest max-w-2xl mx-auto mb-12 font-light">
+        复刻湖畔自然盛景，匠心打造湖景地标文创皂
+      </p>
+
+      <div class="reveal flex flex-col items-center gap-3">
+        <span class="text-white/50 text-xs tracking-[0.2em]">探索更多</span>
+        <div class="w-6 h-10 border border-white/30 rounded-full flex items-start justify-center p-1.5">
+          <div class="w-1.5 h-1.5 bg-white/60 rounded-full animate-bounce-dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1920 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full" preserveAspectRatio="none">
+        <path d="M0,60 C480,120 960,0 1440,60 C1680,90 1800,40 1920,60 L1920,120 L0,120 Z" fill="#f0f9fa"/>
+        <path d="M0,80 C320,40 640,120 960,80 C1280,40 1600,120 1920,80 L1920,120 L0,120 Z" fill="#f0f9fa" opacity="0.7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCT SHOWCASE ===== -->
+  <section class="relative py-20 sm:py-28 overflow-hidden" style="background:#f0f9fa">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+        <div class="w-full lg:w-3/5">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-lake-100" style="box-shadow:0 25px 50px -12px rgba(14,116,144,0.15)">
+            <img src="../images/1.png" alt="松花湖皂产品实拍 - 皂体置于苔藓岩石上，背景为松花湖山水" class="w-full h-auto object-cover" />
+          </div>
+        </div>
+        <div class="w-full lg:w-2/5">
+          <span class="inline-block text-lake-600 text-sm tracking-[0.3em] font-medium mb-3">PRODUCT SHOWCASE</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-lake-900 mb-6 tracking-wide leading-snug">
+            湖光凝脂<br><span class="text-lake-600">山水入皂</span>
+          </h2>
+          <div class="space-y-4 text-lake-900/75 leading-[1.9] text-base">
+            <p>每一块松花湖皂，都是松花湖自然风貌的微缩映射。皂体弧线如湖岸蜿蜒，青碧渐变似水色流转，置于掌心，仿佛握住了一截凝固的湖光。</p>
+            <p>天然苔石为底，碧水青山为幕——松花湖皂从松花湖的自然中来，也将这份清宁润泽带回你的日常。</p>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-8">
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-lake-50 text-lake-700 text-sm font-medium border border-lake-100">天然手作</span>
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-lake-50 text-lake-700 text-sm font-medium border border-lake-100">湖景文创</span>
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-lake-50 text-lake-700 text-sm font-medium border border-lake-100">冷制成皂</span>
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-lake-50 text-lake-700 text-sm font-medium border border-lake-100">草本精华</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ORIGIN ===== -->
+  <section id="origin" class="relative py-24 sm:py-32 bg-lake-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <!-- Header -->
+      <div class="reveal text-center mb-16">
+        <span class="inline-block text-lake-600 text-sm tracking-[0.3em] font-medium mb-3">LANDMARK ORIGIN</span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-lake-900 mb-4 tracking-wide">地标溯源</h2>
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <span class="block w-12 h-px bg-lake-400"></span>
+          <span class="block w-2 h-2 rounded-full bg-lake-400"></span>
+          <span class="block w-12 h-px bg-lake-400"></span>
+        </div>
+        <p class="text-lake-900/50 max-w-2xl mx-auto leading-relaxed">松花湖，吉林大地上一颗璀璨的碧玉明珠，万千湖光山色凝于一皂之中</p>
+      </div>
+
+      <!-- Panoramic image -->
+      <div class="reveal mb-16 rounded-3xl overflow-hidden border border-lake-100" style="box-shadow:0 20px 40px -12px rgba(14,116,144,0.12)">
+        <img src="../images/2.png" alt="松花湖全景 - 碧波万顷，群峰叠翠" class="w-full h-auto object-cover" />
+      </div>
+
+      <!-- Content grid -->
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal space-y-6">
+          <p class="text-lake-900/85 leading-[1.9] text-base">
+            <strong class="text-lake-700">松花湖</strong>，位于吉林省吉林市东南部，是1937年拦截松花江水而形成的山谷型人工湖，水域面积达<strong class="text-lake-700">500余平方公里</strong>，湖岸线蜿蜒绵长，是东北地区最大的人工湖，素有"北国明珠"之美誉。
+          </p>
+          <p class="text-lake-900/85 leading-[1.9] text-base">
+            松花湖四面环山，群峰叠翠，碧波万顷，湖中有百余座岛屿星罗棋布。春赏山花烂漫、夏游碧波清流、秋观层林尽染、冬览银装素裹，四季胜景各异。丰富的水源涵养与原始森林生态，孕育了独特的湖区生物多样性，是国家级风景名胜区与生态保护重地。
+          </p>
+          <p class="text-lake-900/85 leading-[1.9] text-base">
+            作为吉林文旅的标志性名片，松花湖承载着江城人民的集体记忆与情感归属，也是东北大地最具辨识度的地理文化符号之一。松花湖皂，正是将这份湖光山色的自然诗意，凝刻于一方手工皂中，让每一寸肌肤都能感受湖畔的清宁与润泽。
+          </p>
+        </div>
+
+        <div class="reveal space-y-4">
+          <div class="group flex items-start gap-4 p-5 rounded-2xl bg-white/70 backdrop-blur-sm border border-lake-100 hover:border-lake-300 hover:shadow-lg transition-all duration-300">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-lake-100 flex items-center justify-center">
+              <svg class="w-5 h-5 text-lake-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-lake-800 mb-1">地理位置</h4>
+              <p class="text-sm text-lake-900/50 leading-relaxed">吉林市东南部，松花江上游，东北最大人工湖</p>
+            </div>
+          </div>
+          <div class="group flex items-start gap-4 p-5 rounded-2xl bg-white/70 backdrop-blur-sm border border-lake-100 hover:border-lake-300 hover:shadow-lg transition-all duration-300">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-pine-100 flex items-center justify-center">
+              <svg class="w-5 h-5 text-pine-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m12 22-4-8h8Zm0 0V8m0 0-4 4m4-4 4 4M4.93 4.93l2.83 2.83M19.07 4.93l-2.83 2.83"/></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-lake-800 mb-1">生态特色</h4>
+              <p class="text-sm text-lake-900/50 leading-relaxed">原始森林环绕，水源涵养丰沛，生物多样性丰富</p>
+            </div>
+          </div>
+          <div class="group flex items-start gap-4 p-5 rounded-2xl bg-white/70 backdrop-blur-sm border border-lake-100 hover:border-lake-300 hover:shadow-lg transition-all duration-300">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-lake-100 flex items-center justify-center">
+              <svg class="w-5 h-5 text-lake-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-lake-800 mb-1">四季胜景</h4>
+              <p class="text-sm text-lake-900/50 leading-relaxed">春花夏碧、秋林冬雪，四季各有千秋，湖光山色醉人</p>
+            </div>
+          </div>
+          <div class="group flex items-start gap-4 p-5 rounded-2xl bg-white/70 backdrop-blur-sm border border-lake-100 hover:border-lake-300 hover:shadow-lg transition-all duration-300">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center" style="background:rgba(245,230,184,0.5)">
+              <svg class="w-5 h-5 text-amber-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-lake-800 mb-1">文旅地标</h4>
+              <p class="text-sm text-lake-900/50 leading-relaxed">国家级风景名胜区，吉林文旅标志，江城人民的精神符号</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DESIGN ===== -->
+  <section id="design" class="relative py-24 sm:py-32" style="background:#f0f9fa">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal text-center mb-16">
+        <span class="inline-block text-lake-600 text-sm tracking-[0.3em] font-medium mb-3">DESIGN PHILOSOPHY</span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-lake-900 mb-4 tracking-wide">设计理念</h2>
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <span class="block w-12 h-px bg-lake-400"></span>
+          <span class="block w-2 h-2 rounded-full bg-lake-400"></span>
+          <span class="block w-12 h-px bg-lake-400"></span>
+        </div>
+        <p class="text-lake-900/50 max-w-2xl mx-auto leading-relaxed">以松花湖自然风貌为蓝本，从造型、配色、香型、层次、工艺五个维度，复刻湖光山色于一方皂中</p>
+      </div>
+
+      <div class="space-y-8">
+        <!-- 1. 湖面流线造型 -->
+        <div class="reveal group relative overflow-hidden rounded-3xl border border-lake-200 hover:border-lake-400 transition-all duration-500 hover:shadow-xl">
+          <div class="absolute inset-0 bg-gradient-to-br from-lake-50 to-lake-100/50 opacity-50 group-hover:opacity-80 transition-opacity duration-500"></div>
+          <div class="relative flex flex-col md:flex-row">
+            <div class="md:w-2/5 p-8 sm:p-10 flex flex-col items-center justify-center">
+              <div class="w-20 h-20 rounded-2xl bg-lake-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
+                <svg class="w-10 h-10 text-lake-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+              </div>
+              <span class="text-xs tracking-[0.2em] text-lake-900/40 uppercase">Curve of the Lake</span>
+            </div>
+            <div class="md:w-3/5 p-8 sm:p-10 md:pl-0">
+              <h3 class="font-serif text-xl sm:text-2xl text-lake-800 mb-4 tracking-wide">湖面流线造型</h3>
+              <p class="text-lake-900/75 leading-[1.9] text-base">以松花湖蜿蜒柔美的湖岸线为灵感，皂体采用弧形流线设计，边缘如水波般自然起伏。盈盈一握之间，仿佛触摸到了湖面的涟漪与柔波，将万顷湖光凝于一掌之形。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. 波光渐变配色 -->
+        <div class="reveal group relative overflow-hidden rounded-3xl border border-lake-200 hover:border-lake-400 transition-all duration-500 hover:shadow-xl">
+          <div class="absolute inset-0 bg-gradient-to-br from-pine-50 to-lake-100/50 opacity-50 group-hover:opacity-80 transition-opacity duration-500"></div>
+          <div class="relative flex flex-col md:flex-row-reverse">
+            <div class="md:w-2/5 p-8 sm:p-10 flex flex-col items-center justify-center">
+              <div class="w-20 h-20 rounded-2xl bg-lake-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
+                <svg class="w-10 h-10 text-lake-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+              </div>
+              <span class="text-xs tracking-[0.2em] text-lake-900/40 uppercase">Gradient of Ripples</span>
+            </div>
+            <div class="md:w-3/5 p-8 sm:p-10 md:pr-0">
+              <h3 class="font-serif text-xl sm:text-2xl text-lake-800 mb-4 tracking-wide">波光渐变配色</h3>
+              <p class="text-lake-900/75 leading-[1.9] text-base">取松花湖清晨至日暮的水色变幻，由浅碧至深青，层层渐变晕染。如湖面倒映天光，碧波万顷间光影流转，皂体色泽宛如将一截湖水凝固于时光之中。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. 湖畔自然香型 -->
+        <div class="reveal group relative overflow-hidden rounded-3xl border border-pine-200 hover:border-pine-400 transition-all duration-500 hover:shadow-xl">
+          <div class="absolute inset-0 bg-gradient-to-br from-pine-50 to-pine-100/50 opacity-50 group-hover:opacity-80 transition-opacity duration-500"></div>
+          <div class="relative flex flex-col md:flex-row">
+            <div class="md:w-2/5 p-8 sm:p-10 flex flex-col items-center justify-center">
+              <div class="w-20 h-20 rounded-2xl bg-pine-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
+                <svg class="w-10 h-10 text-pine-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 16.5A4.5 4.5 0 1 1 16.5 12"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+              </div>
+              <span class="text-xs tracking-[0.2em] text-lake-900/40 uppercase">Scent of the Shore</span>
+            </div>
+            <div class="md:w-3/5 p-8 sm:p-10 md:pl-0">
+              <h3 class="font-serif text-xl sm:text-2xl text-pine-800 mb-4 tracking-wide">湖畔自然香型</h3>
+              <p class="text-lake-900/75 leading-[1.9] text-base">调香师以松花湖畔四季草木为蓝本，捕捉松针清冽、野花香柔、晨露清润的自然气息，营造出置身湖畔林间的幽香意境。每一次使用，都是一场回归山水的嗅觉旅行。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. 层次香气调配 -->
+        <div class="reveal group relative overflow-hidden rounded-3xl border border-pine-200 hover:border-pine-400 transition-all duration-500 hover:shadow-xl">
+          <div class="absolute inset-0 bg-gradient-to-br from-lake-50 to-pine-100/50 opacity-50 group-hover:opacity-80 transition-opacity duration-500"></div>
+          <div class="relative flex flex-col md:flex-row-reverse">
+            <div class="md:w-2/5 p-8 sm:p-10 flex flex-col items-center justify-center">
+              <div class="w-20 h-20 rounded-2xl bg-pine-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
+                <svg class="w-10 h-10 text-pine-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+              </div>
+              <span class="text-xs tracking-[0.2em] text-lake-900/40 uppercase">Layered Fragrance</span>
+            </div>
+            <div class="md:w-3/5 p-8 sm:p-10 md:pr-0">
+              <h3 class="font-serif text-xl sm:text-2xl text-pine-800 mb-4 tracking-wide">层次香气调配</h3>
+              <p class="text-lake-900/75 leading-[1.9] text-base">前调以晨风中的松针清香开篇，中调融入湖畔野花的温润花香，尾调以苔藓与湖水的清幽底韵收束。三段层次递进，如漫步湖畔从晨光走到暮色，余韵悠长。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. 梯度晕染工艺 -->
+        <div class="reveal group relative overflow-hidden rounded-3xl border border-amber-light hover:border-amber-gold/50 transition-all duration-500 hover:shadow-xl">
+          <div class="absolute inset-0 bg-gradient-to-br opacity-50 group-hover:opacity-80 transition-opacity duration-500" style="background:linear-gradient(to bottom right,rgba(245,230,184,0.3),rgba(213,238,240,0.5))"></div>
+          <div class="relative flex flex-col md:flex-row">
+            <div class="md:w-2/5 p-8 sm:p-10 flex flex-col items-center justify-center">
+              <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500" style="background:rgba(245,230,184,0.5)">
+                <svg class="w-10 h-10 text-amber-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+              </div>
+              <span class="text-xs tracking-[0.2em] text-lake-900/40 uppercase">Ombre Craftsmanship</span>
+            </div>
+            <div class="md:w-3/5 p-8 sm:p-10 md:pl-0">
+              <h3 class="font-serif text-xl sm:text-2xl text-lake-800 mb-4 tracking-wide">梯度晕染工艺</h3>
+              <p class="text-lake-900/75 leading-[1.9] text-base">手工皂师采用梯度注皂与多层叠加晕染工艺，每一层色泽精确过渡，如同湖面由浅及深的自然水色梯度。全程手工制作，每一块皂都独一无二，是匠心与自然的共舞之作。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INGREDIENTS ===== -->
+  <section id="ingredients" class="relative py-24 sm:py-32" style="background:rgba(240,249,250,0.5)">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal text-center mb-16">
+        <span class="inline-block text-lake-600 text-sm tracking-[0.3em] font-medium mb-3">CORE INGREDIENTS</span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-lake-900 mb-4 tracking-wide">核心成分</h2>
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <span class="block w-12 h-px bg-lake-400"></span>
+          <span class="block w-2 h-2 rounded-full bg-lake-400"></span>
+          <span class="block w-12 h-px bg-lake-400"></span>
+        </div>
+        <p class="text-lake-900/50 max-w-2xl mx-auto leading-relaxed">以松花湖自然生态为源，精选天然护肤原料，古法冷制匠心成皂</p>
+      </div>
+
+      <!-- Ingredient image -->
+      <div class="reveal mb-16 rounded-3xl overflow-hidden border border-lake-100" style="box-shadow:0 20px 40px -12px rgba(14,116,144,0.12)">
+        <img src="../images/3.png" alt="松针、薄荷、艾草等湖畔原生植物" class="w-full h-auto object-cover" />
+      </div>
+
+      <!-- Ingredient cards -->
+      <div class="grid sm:grid-cols-2 gap-6">
+        <!-- 松花湖生态活水 -->
+        <div class="reveal group p-8 rounded-2xl bg-white/80 backdrop-blur-sm border border-transparent hover:border-lake-300 hover:shadow-lg transition-all duration-300">
+          <div class="flex items-start gap-4 mb-5">
+            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-lake-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-7 h-7 text-lake-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 flex-wrap mb-1">
+                <h3 class="font-serif text-lg text-lake-800 tracking-wide">松花湖生态活水</h3>
+                <span class="inline-flex px-2.5 py-0.5 rounded-full text-xs font-medium bg-lake-100 text-lake-700">核心水源</span>
+              </div>
+              <p class="text-xs text-lake-900/40 flex items-center gap-1.5">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-lake-400"></span>松花湖核心水源地
+              </p>
+            </div>
+          </div>
+          <p class="text-lake-900/75 leading-[1.9] text-sm pl-[4.5rem]">取自松花湖深层天然活水，经年流淌于原始森林与火山岩层之间，富含矿物质与微量元素，天然纯净，为皂体注入湖水的清润灵魂，令每一次清洁都如同湖水抚肤。</p>
+        </div>
+
+        <!-- 湖滨草本精华 -->
+        <div class="reveal group p-8 rounded-2xl bg-white/80 backdrop-blur-sm border border-transparent hover:border-pine-300 hover:shadow-lg transition-all duration-300">
+          <div class="flex items-start gap-4 mb-5">
+            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-pine-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-7 h-7 text-pine-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 17 3.5s0 6-5.3 8.5c0 0 3.8.5 6.3-2"/><path d="M11.2 8c2.5-2.7 5-3.5 5-3.5"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 flex-wrap mb-1">
+                <h3 class="font-serif text-lg text-pine-800 tracking-wide">湖滨草本精华</h3>
+                <span class="inline-flex px-2.5 py-0.5 rounded-full text-xs font-medium bg-pine-100 text-pine-700">天然萃取</span>
+              </div>
+              <p class="text-xs text-lake-900/40 flex items-center gap-1.5">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-pine-400"></span>湖畔自然采集
+              </p>
+            </div>
+          </div>
+          <p class="text-lake-900/75 leading-[1.9] text-sm pl-[4.5rem]">甄选松花湖畔自然生长的草木精华——松针、薄荷、艾草等湖区原生植物，低温冷萃保留活性成分，天然抑菌、舒缓修护，将湖畔草木的生命力融入每一丝泡沫。</p>
+        </div>
+
+        <!-- 清润植萃保湿液 -->
+        <div class="reveal group p-8 rounded-2xl bg-white/80 backdrop-blur-sm border border-transparent hover:border-lake-300 hover:shadow-lg transition-all duration-300">
+          <div class="flex items-start gap-4 mb-5">
+            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-lake-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-7 h-7 text-lake-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 14.1c1.44 0 2.6-1.19 2.6-2.64 0-.76-.37-1.47-1.11-2.08S12.73 7.89 12.56 7c-.17.89-.78 1.79-1.53 2.38s-1.11 1.32-1.11 2.08c0 1.45 1.17 2.64 2.6 2.64z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 flex-wrap mb-1">
+                <h3 class="font-serif text-lg text-lake-800 tracking-wide">清润植萃保湿液</h3>
+                <span class="inline-flex px-2.5 py-0.5 rounded-full text-xs font-medium bg-lake-100 text-lake-700">保湿修护</span>
+              </div>
+              <p class="text-xs text-lake-900/40 flex items-center gap-1.5">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-lake-400"></span>植物精华浓缩
+              </p>
+            </div>
+          </div>
+          <p class="text-lake-900/75 leading-[1.9] text-sm pl-[4.5rem]">以天然植物甘油与芦荟精华为基底，配合透明质酸保湿因子，在深层清洁的同时为肌肤构建锁水屏障。洗后肌肤不紧绷、不干燥，如湖风拂面般清爽润泽。</p>
+        </div>
+
+        <!-- 亲肤植物基底 -->
+        <div class="reveal group p-8 rounded-2xl bg-white/80 backdrop-blur-sm border border-transparent hover:border-pine-300 hover:shadow-lg transition-all duration-300">
+          <div class="flex items-start gap-4 mb-5">
+            <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-pine-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-7 h-7 text-pine-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 flex-wrap mb-1">
+                <h3 class="font-serif text-lg text-pine-800 tracking-wide">亲肤植物基底</h3>
+                <span class="inline-flex px-2.5 py-0.5 rounded-full text-xs font-medium bg-pine-100 text-pine-700">温和亲肤</span>
+              </div>
+              <p class="text-xs text-lake-900/40 flex items-center gap-1.5">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-pine-400"></span>植物油脂精制
+              </p>
+            </div>
+          </div>
+          <p class="text-lake-900/75 leading-[1.9] text-sm pl-[4.5rem]">选用橄榄油、椰子油、棕榈油等天然植物油脂为皂体基底，采用传统冷制皂工艺，低温慢皂4-6周，保留甘油等天然滋润成分，温和亲肤，敏感肌亦可安心使用。</p>
+        </div>
+      </div>
+
+      <!-- Process highlight -->
+      <div class="reveal mt-12 p-8 sm:p-10 rounded-2xl bg-gradient-to-r from-lake-600 to-lake-700 text-white text-center">
+        <h3 class="font-serif text-xl sm:text-2xl mb-3 tracking-wide">古法冷制 · 匠心成皂</h3>
+        <p class="text-white/80 leading-relaxed max-w-2xl mx-auto">采用传统冷制皂工艺，低温慢皂4-6周自然皂化，完整保留天然甘油与植物活性成分。每一块松花湖皂，都经历了从原料甄选到手工注皂的数十道工序，以时间与匠心，换取最纯粹的湖畔馈赠。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" class="relative py-24 sm:py-32 overflow-hidden" style="background:#f0f9fa">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal text-center mb-16">
+        <span class="inline-block text-lake-600 text-sm tracking-[0.3em] font-medium mb-3">USER EXPERIENCE</span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-lake-900 mb-4 tracking-wide">使用体验</h2>
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <span class="block w-12 h-px bg-lake-400"></span>
+          <span class="block w-2 h-2 rounded-full bg-lake-400"></span>
+          <span class="block w-12 h-px bg-lake-400"></span>
+        </div>
+        <p class="text-lake-900/50 max-w-2xl mx-auto leading-relaxed">每一次使用，都是一场与松花湖的感官对话</p>
+      </div>
+
+      <!-- Experience image -->
+      <div class="reveal mb-16 rounded-3xl overflow-hidden border border-lake-100" style="box-shadow:0 20px 40px -12px rgba(14,116,144,0.12)">
+        <img src="https://picsum.photos/seed/foam1/1200/600" alt="柔润泡沫体验 - 丰盈细腻的泡沫如晨雾般轻柔" class="w-full h-auto object-cover" />
+      </div>
+
+      <!-- Experience cards -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="reveal group relative p-6 sm:p-8 rounded-2xl bg-white/60 backdrop-blur-sm border border-lake-100 hover:border-lake-300 hover:bg-white/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="absolute top-4 right-4 text-5xl font-serif text-lake-100 group-hover:text-lake-200 transition-colors select-none">01</span>
+          <div class="w-14 h-14 rounded-2xl bg-lake-50 flex items-center justify-center mb-5 group-hover:bg-lake-100 group-hover:scale-110 transition-all duration-300">
+            <svg class="w-7 h-7 text-lake-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/></svg>
+          </div>
+          <h3 class="font-serif text-lg text-lake-800 mb-1 tracking-wide">柔润泡沫</h3>
+          <p class="text-xs text-lake-500 tracking-wider mb-3 uppercase">Rich Lather</p>
+          <p class="text-lake-900/70 leading-[1.8] text-sm mb-4">天然植物油脂在掌心遇水化云，细密丰盈的泡沫如松花湖晨雾般轻柔包裹肌肤。绵密质感不伤肤，每一次揉搓都如同被湖面薄雾温柔环抱，触感细腻如丝。</p>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lake-50 text-lake-600 text-xs font-medium">
+            <span class="w-1 h-1 rounded-full bg-lake-400"></span>如晨雾般轻柔
+          </span>
+        </div>
+
+        <div class="reveal group relative p-6 sm:p-8 rounded-2xl bg-white/60 backdrop-blur-sm border border-lake-100 hover:border-lake-300 hover:bg-white/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="absolute top-4 right-4 text-5xl font-serif text-lake-100 group-hover:text-lake-200 transition-colors select-none">02</span>
+          <div class="w-14 h-14 rounded-2xl bg-lake-50 flex items-center justify-center mb-5 group-hover:bg-lake-100 group-hover:scale-110 transition-all duration-300">
+            <svg class="w-7 h-7 text-lake-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          </div>
+          <h3 class="font-serif text-lg text-lake-800 mb-1 tracking-wide">清润净肤</h3>
+          <p class="text-xs text-lake-500 tracking-wider mb-3 uppercase">Deep Cleansing</p>
+          <p class="text-lake-900/70 leading-[1.8] text-sm mb-4">植物基底温和而深入地清洁毛孔污垢与多余油脂，同时湖滨草本精华舒缓调理肌肤状态。洗后通透清爽，不紧绷不假滑，还原肌肤本真清润。</p>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lake-50 text-lake-600 text-xs font-medium">
+            <span class="w-1 h-1 rounded-full bg-lake-400"></span>温和深层清洁
+          </span>
+        </div>
+
+        <div class="reveal group relative p-6 sm:p-8 rounded-2xl bg-white/60 backdrop-blur-sm border border-lake-100 hover:border-lake-300 hover:bg-white/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="absolute top-4 right-4 text-5xl font-serif text-lake-100 group-hover:text-lake-200 transition-colors select-none">03</span>
+          <div class="w-14 h-14 rounded-2xl bg-lake-50 flex items-center justify-center mb-5 group-hover:bg-lake-100 group-hover:scale-110 transition-all duration-300">
+            <svg class="w-7 h-7 text-lake-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>
+          </div>
+          <h3 class="font-serif text-lg text-lake-800 mb-1 tracking-wide">自然留香</h3>
+          <p class="text-xs text-lake-500 tracking-wider mb-3 uppercase">Lasting Scent</p>
+          <p class="text-lake-900/70 leading-[1.8] text-sm mb-4">三段式层次香调缓缓绽放——前调松针清冽，中调野花温润，尾调苔藓幽远。自然香气不浓不烈，恰似微风拂过湖畔，淡淡萦绕肌肤。</p>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lake-50 text-lake-600 text-xs font-medium">
+            <span class="w-1 h-1 rounded-full bg-lake-400"></span>三段层次递进
+          </span>
+        </div>
+
+        <div class="reveal group relative p-6 sm:p-8 rounded-2xl bg-white/60 backdrop-blur-sm border border-lake-100 hover:border-lake-300 hover:bg-white/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="absolute top-4 right-4 text-5xl font-serif text-lake-100 group-hover:text-lake-200 transition-colors select-none">04</span>
+          <div class="w-14 h-14 rounded-2xl bg-lake-50 flex items-center justify-center mb-5 group-hover:bg-lake-100 group-hover:scale-110 transition-all duration-300">
+            <svg class="w-7 h-7 text-lake-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><line x1="10" x2="8" y1="5" y2="7"/><line x1="2" x2="22" y1="13" y2="13"/><line x1="7" x2="8" y1="13" y2="22"/></svg>
+          </div>
+          <h3 class="font-serif text-lg text-lake-800 mb-1 tracking-wide">百搭多用</h3>
+          <p class="text-xs text-lake-500 tracking-wider mb-3 uppercase">Versatile Care</p>
+          <p class="text-lake-900/70 leading-[1.8] text-sm mb-4">洁面、沐浴、洗手皆宜，一皂满足日常多元护肤需求。无论是晨起清新唤醒、运动后清爽净身、还是睡前悠然沐浴，松花湖皂都能为每一刻日常注入湖畔的自然诗意。</p>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lake-50 text-lake-600 text-xs font-medium">
+            <span class="w-1 h-1 rounded-full bg-lake-400"></span>一皂多用
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CULTURE ===== -->
+  <section id="culture" class="relative py-24 sm:py-32" style="background:rgba(240,249,250,0.3)">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal text-center mb-16">
+        <span class="inline-block text-lake-600 text-sm tracking-[0.3em] font-medium mb-3">CULTURAL SIGNIFICANCE</span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-lake-900 mb-4 tracking-wide">文化寓意</h2>
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <span class="block w-12 h-px bg-lake-400"></span>
+          <span class="block w-2 h-2 rounded-full bg-lake-400"></span>
+          <span class="block w-12 h-px bg-lake-400"></span>
+        </div>
+        <p class="text-lake-900/50 max-w-2xl mx-auto leading-relaxed">一方皂承载一座湖，一份礼传递一座城</p>
+      </div>
+
+      <!-- Gift packaging image -->
+      <div class="reveal mb-16 rounded-3xl overflow-hidden border border-lake-100" style="box-shadow:0 20px 40px -12px rgba(14,116,144,0.12)">
+        <img src="https://picsum.photos/seed/gift1/1200/600" alt="精美礼盒包装 - 湖光山色的诗意尽收其中" class="w-full h-auto object-cover" />
+      </div>
+
+      <!-- Two column -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- 自用雅选 -->
+        <div class="reveal group p-8 sm:p-10 rounded-3xl bg-white/70 backdrop-blur-sm border border-lake-100 hover:border-lake-300 hover:shadow-xl transition-all duration-500">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-lake-100 flex items-center justify-center group-hover:bg-lake-200 group-hover:scale-110 transition-all duration-300">
+              <svg class="w-7 h-7 text-lake-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-serif text-xl text-lake-800 tracking-wide">自用雅选</h3>
+              <p class="text-xs text-lake-500 tracking-wider">PERSONAL CHOICE</p>
+            </div>
+          </div>
+          <div class="space-y-4 text-lake-900/75 leading-[1.9] text-base">
+            <p>松花湖皂将江城山水的灵气凝于日常洗护之中，让每一次洗手、沐浴都成为一次微型的身心疗愈。在繁忙的都市生活里，皂体渐变的湖色、松针与野花的自然馨香，能瞬间带你回到湖畔的清宁时光。</p>
+            <p>这不仅是一块好用的手工皂，更是将故土山水带在身边的温柔方式。对于吉林人而言，它是家的味道；对于远方来客，它是旅途的余韵。</p>
+          </div>
+        </div>
+
+        <!-- 礼赠心意 -->
+        <div class="reveal group p-8 sm:p-10 rounded-3xl bg-white/70 backdrop-blur-sm border border-lake-100 hover:border-lake-300 hover:shadow-xl transition-all duration-500">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300" style="background:rgba(245,230,184,0.5)">
+              <svg class="w-7 h-7 text-amber-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>
+            </div>
+            <div>
+              <h3 class="font-serif text-xl text-lake-800 tracking-wide">礼赠心意</h3>
+              <p class="text-xs tracking-wider" style="color:rgba(201,149,44,0.7)">GIFT OF NATURE</p>
+            </div>
+          </div>
+          <div class="space-y-4 text-lake-900/75 leading-[1.9] text-base">
+            <p>松花湖皂兼具实用价值与文化内涵，是表达心意的独特之选。送亲友，是送一份来自东北山水的问候；送客户，是送一张会呼吸的吉林名片；送自己，是送一场回归自然的日常仪式。</p>
+            <p>精美礼盒装将湖光山色的诗意尽收其中，开盒即见湖色，启皂即闻湖香。无论是节日赠礼、商务伴手礼，还是旅行纪念品，松花湖皂都能让收礼之人感受到来自松花湖畔的诚挚温度。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cultural identity banner -->
+      <div class="reveal mt-12 p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-lake-700 via-lake-600 to-pine-700 text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-64 h-64 rounded-full bg-white/5 -translate-y-1/2 translate-x-1/3"></div>
+        <div class="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-white/5 translate-y-1/2 -translate-x-1/4"></div>
+        <div class="relative flex flex-col md:flex-row items-center gap-6 md:gap-10">
+          <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9h.01"/><path d="M9 12h.01"/><path d="M9 15h.01"/><path d="M9 18h.01"/></svg>
+          </div>
+          <div class="text-center md:text-left">
+            <h3 class="font-serif text-xl sm:text-2xl mb-3 tracking-wide">江城地域特色文创</h3>
+            <p class="text-white/80 leading-relaxed max-w-3xl">松花湖皂是吉林市最具代表性的地域文创产品之一，它不仅是洗护用品，更是松花湖自然文化的物质载体。每一块皂都凝聚着吉林的山水精神——清宁、厚润、自然。作为江城文旅IP的延伸，松花湖皂让每一位使用者都能感受到这座城市的独特气质与文化温度。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SELLING POINTS ===== -->
+  <section id="selling-points" class="relative py-24 sm:py-32" style="background:#f0f9fa">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal text-center mb-16">
+        <span class="inline-block text-lake-600 text-sm tracking-[0.3em] font-medium mb-3">KEY SELLING POINTS</span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-lake-900 mb-4 tracking-wide">核心卖点</h2>
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <span class="block w-12 h-px bg-lake-400"></span>
+          <span class="block w-2 h-2 rounded-full bg-lake-400"></span>
+          <span class="block w-12 h-px bg-lake-400"></span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <!-- 1 -->
+        <div class="reveal group relative p-6 rounded-2xl bg-white/60 border border-lake-100 hover:border-lake-300 hover:bg-white/90 hover:shadow-lg transition-all duration-300 text-center hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-lake-50 flex items-center justify-center mx-auto mb-4 group-hover:bg-lake-100 group-hover:scale-110 transition-all duration-300">
+            <svg class="w-6 h-6 text-lake-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
+          </div>
+          <h4 class="font-serif text-base text-lake-800 mb-2 tracking-wide">流线弧形湖体造型</h4>
+          <p class="text-xs text-lake-900/50 leading-relaxed">以松花湖柔美湖岸线为灵感，弧形流线设计</p>
+        </div>
+        <!-- 2 -->
+        <div class="reveal group relative p-6 rounded-2xl bg-white/60 border border-lake-100 hover:border-lake-300 hover:bg-white/90 hover:shadow-lg transition-all duration-300 text-center hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-lake-50 flex items-center justify-center mx-auto mb-4 group-hover:bg-lake-100 group-hover:scale-110 transition-all duration-300">
+            <svg class="w-6 h-6 text-lake-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+          </div>
+          <h4 class="font-serif text-base text-lake-800 mb-2 tracking-wide">青碧渐变晕染配色</h4>
+          <p class="text-xs text-lake-900/50 leading-relaxed">浅碧至深青，波光渐变如湖面水色流转</p>
+        </div>
+        <!-- 3 -->
+        <div class="reveal group relative p-6 rounded-2xl bg-white/60 border border-lake-100 hover:border-lake-300 hover:bg-white/90 hover:shadow-lg transition-all duration-300 text-center hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-lake-50 flex items-center justify-center mx-auto mb-4 group-hover:bg-lake-100 group-hover:scale-110 transition-all duration-300">
+            <svg class="w-6 h-6 text-lake-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 16.5A4.5 4.5 0 1 1 16.5 12"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          </div>
+          <h4 class="font-serif text-base text-lake-800 mb-2 tracking-wide">湖畔草木自然香调</h4>
+          <p class="text-xs text-lake-900/50 leading-relaxed">松针清冽、野花香柔、苔藓幽远三段层次</p>
+        </div>
+        <!-- 4 -->
+        <div class="reveal group relative p-6 rounded-2xl bg-white/60 border border-lake-100 hover:border-lake-300 hover:bg-white/90 hover:shadow-lg transition-all duration-300 text-center hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-lake-50 flex items-center justify-center mx-auto mb-4 group-hover:bg-lake-100 group-hover:scale-110 transition-all duration-300">
+            <svg class="w-6 h-6 text-lake-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+          </div>
+          <h4 class="font-serif text-base text-lake-800 mb-2 tracking-wide">梯度晕染匠心工艺</h4>
+          <p class="text-xs text-lake-900/50 leading-relaxed">手工注皂多层叠加，每块独一无二</p>
+        </div>
+        <!-- 5 -->
+        <div class="reveal group relative p-6 rounded-2xl bg-white/60 border border-lake-100 hover:border-lake-300 hover:bg-white/90 hover:shadow-lg transition-all duration-300 text-center hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-lake-50 flex items-center justify-center mx-auto mb-4 group-hover:bg-lake-100 group-hover:scale-110 transition-all duration-300">
+            <svg class="w-6 h-6 text-lake-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9h.01"/><path d="M9 12h.01"/><path d="M9 15h.01"/><path d="M9 18h.01"/></svg>
+          </div>
+          <h4 class="font-serif text-base text-lake-800 mb-2 tracking-wide">吉林湖景特色文创</h4>
+          <p class="text-xs text-lake-900/50 leading-relaxed">松花湖地标文化载体，自用礼赠皆宜</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GOLDEN QUOTE ===== -->
+  <section class="relative py-32 sm:py-40 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-lake-50 via-lake-50/50 to-lake-50"></div>
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/4 left-1/4 w-80 h-80 rounded-full animate-float" style="background:radial-gradient(circle,rgba(14,116,144,0.06) 0%,transparent 70%)"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full animate-float" style="background:radial-gradient(circle,rgba(63,123,65,0.05) 0%,transparent 70%);animation-delay:3s"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+      <div class="reveal flex items-center justify-center gap-4 mb-10">
+        <span class="block w-20 h-px bg-lake-300"></span>
+        <span class="block w-3 h-3 rounded-full border-2 border-lake-300"></span>
+        <span class="block w-20 h-px bg-lake-300"></span>
+      </div>
+      <blockquote class="reveal">
+        <p class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-lake-800 leading-[1.5] tracking-widest" style="text-shadow:0 1px 8px rgba(14,116,144,0.08)">一皂凝尽湖光色</p>
+        <p class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-lake-800 leading-[1.5] tracking-widest mt-2" style="text-shadow:0 1px 8px rgba(14,116,144,0.08)">清风漫染草木香</p>
+      </blockquote>
+      <div class="reveal flex items-center justify-center gap-4 mt-10">
+        <span class="block w-20 h-px bg-lake-300"></span>
+        <span class="block w-3 h-3 rounded-full border-2 border-lake-300"></span>
+        <span class="block w-20 h-px bg-lake-300"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="relative py-12 bg-lake-900 text-white/70">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col items-center text-center gap-4">
+        <div>
+          <h3 class="font-serif text-lg text-white/90 tracking-widest mb-1">松花湖皂</h3>
+          <p class="text-xs text-white/40 tracking-wider">SONGHUA LAKE SOAP</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="block w-8 h-px bg-white/20"></span>
+          <span class="block w-1.5 h-1.5 rounded-full bg-white/20"></span>
+          <span class="block w-8 h-px bg-white/20"></span>
+        </div>
+        <p class="text-sm text-white/50 max-w-md leading-relaxed">揽湖光万顷，藏松花清宁。以匠心复刻湖畔自然盛景，让每一寸肌肤感受湖光山色的诗意润泽。</p>
+        <p class="text-xs text-white/30 mt-4">松花湖皂 · 吉林湖景地标文创</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    const navLogo = document.getElementById('nav-logo');
+    const navLinks = document.getElementById('nav-links');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        navbar.style.background = 'rgba(255,255,255,0.9)';
+        navbar.style.backdropFilter = 'blur(12px)';
+        navbar.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
+        navbar.style.borderBottom = '1px solid rgba(213,238,240,1)';
+        navLogo.style.color = '#113f50';
+        navLinks.querySelectorAll('a').forEach(a => {
+          a.style.color = 'rgba(17,63,80,0.7)';
+        });
+      } else {
+        navbar.style.background = 'transparent';
+        navbar.style.backdropFilter = 'none';
+        navbar.style.boxShadow = 'none';
+        navbar.style.borderBottom = 'none';
+        navLogo.style.color = 'white';
+        navLinks.querySelectorAll('a').forEach(a => {
+          a.style.color = 'rgba(255,255,255,0.7)';
+        });
+      }
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
