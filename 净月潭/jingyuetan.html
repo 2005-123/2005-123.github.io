@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>净月潭皂 | 揽林海清幽 藏净月风华</title>
+  <meta name="description" content="复刻林间生态盛景，匠心打造森林地标文创皂。净月潭皂——一丸弯月藏林海，半缕松风润日常。" />
+  <meta name="keywords" content="净月潭皂,森林文创,地标文创皂,天然植萃,手工皂,净月潭,林海" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              50: '#eef7f1',
+              100: '#d4eadc',
+              200: '#a8d4b8',
+              300: '#7aba90',
+              400: '#5a9a72',
+              500: '#3a7a54',
+              600: '#2a5a3e',
+              700: '#1a3a2a',
+              800: '#122b1c',
+              900: '#0a1f14',
+            },
+            gold: {
+              300: '#e0cc90',
+              400: '#d4b876',
+              500: '#c8a45c',
+            },
+          },
+          fontFamily: {
+            serif: ['"Noto Serif SC"', '"Songti SC"', '"SimSun"', 'ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+            sans: ['"PingFang SC"', '"Hiragino Sans GB"', '"Microsoft YaHei"', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <!-- Google Fonts - Noto Serif SC -->
+  <link rel="preconnect" href="https://fonts.googleapis.cn" />
+  <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+  <link href="https://fonts.googleapis.cn/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== 基础 ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; background: #eef7f1; color: #1a3a2a; }
+
+    /* ===== 滚动条 ===== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #eef7f1; }
+    ::-webkit-scrollbar-thumb { background: #7aba90; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #5a9a72; }
+
+    /* ===== 动画 ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes bounce-arrow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    .animate-fade-in-up { animation: fadeInUp 0.8s ease-out both; }
+    .animate-fade-in { animation: fadeIn 1s ease-out both; }
+    .animate-float { animation: float 4s ease-in-out infinite; }
+    .animate-bounce-arrow { animation: bounce-arrow 1.5s ease-in-out infinite; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-400 { animation-delay: 0.4s; }
+    .delay-600 { animation-delay: 0.6s; }
+
+    /* ===== 森林纹理背景 ===== */
+    .forest-texture {
+      background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(58,122,84,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(58,122,84,0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 60% 80%, rgba(200,164,92,0.04) 0%, transparent 50%);
+    }
+
+    /* ===== 金色渐变文字 ===== */
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #c8a45c, #e0cc90, #c8a45c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ===== 标签线 ===== */
+    .section-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .section-label::before,
+    .section-label::after {
+      content: '';
+      height: 1px;
+      width: 2rem;
+      background: rgba(90,154,114,0.4);
+    }
+
+    /* ===== 装饰角标 ===== */
+    .corner-tl { position: absolute; top: 1rem; left: 1rem; width: 2rem; height: 2rem; border-top: 1px solid rgba(90,154,114,0.3); border-left: 1px solid rgba(90,154,114,0.3); }
+    .corner-tr { position: absolute; top: 1rem; right: 1rem; width: 2rem; height: 2rem; border-top: 1px solid rgba(90,154,114,0.3); border-right: 1px solid rgba(90,154,114,0.3); }
+    .corner-bl { position: absolute; bottom: 1rem; left: 1rem; width: 2rem; height: 2rem; border-bottom: 1px solid rgba(90,154,114,0.3); border-left: 1px solid rgba(90,154,114,0.3); }
+    .corner-br { position: absolute; bottom: 1rem; right: 1rem; width: 2rem; height: 2rem; border-bottom: 1px solid rgba(90,154,114,0.3); border-right: 1px solid rgba(90,154,114,0.3); }
+
+    /* ===== 图片通用 ===== */
+    .img-cover { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ===== 滚动渐入 ===== */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== 1. HERO BANNER ==================== -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- 背景图 -->
+    <div class="absolute inset-0">
+      <img src="https://coze-coding-project.tos.coze.site/coze_storage_7640791410282725414/image/generate_image_4c1f9f01-77a9-4aea-96c1-27bf847cf962.jpeg?sign=1810547827-262a9b701b-0-719c4e81bafdb3a2f76bc04a82835b4d787d5837f4da85008dbf77a3e3c26fe4" alt="净月潭林海风光" class="img-cover" />
+      <!-- 渐变遮罩 -->
+      <div class="absolute inset-0 bg-gradient-to-b from-forest-900/70 via-forest-900/50 to-forest-900/80"></div>
+    </div>
+
+    <!-- 装饰角标 -->
+    <div class="corner-tl"></div>
+    <div class="corner-tr"></div>
+    <div class="corner-bl"></div>
+    <div class="corner-br"></div>
+
+    <!-- 主内容 -->
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <!-- 品牌标识 -->
+      <div class="animate-fade-in mb-8">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-forest-300/30 bg-forest-900/40 backdrop-blur-sm">
+          <svg class="w-4 h-4 text-forest-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L6 10h3l-4 7h4L5 22h14l-4-5h4l-4-7h3L12 2z"/></svg>
+          <span class="text-forest-200 text-xs tracking-[0.2em]">净月潭 · 森林地标文创</span>
+        </div>
+      </div>
+
+      <!-- 主 Slogan -->
+      <h1 class="animate-fade-in-up font-serif text-4xl sm:text-5xl md:text-7xl text-white leading-tight tracking-wide mb-6">
+        揽林海清幽
+        <br />
+        <span class="gold-gradient-text">藏净月风华</span>
+      </h1>
+
+      <!-- 副标题 -->
+      <p class="animate-fade-in-up delay-200 text-base sm:text-lg md:text-xl text-forest-100/90 leading-relaxed max-w-2xl mx-auto mb-10 font-light">
+        复刻林间生态盛景，匠心打造森林地标文创皂
+      </p>
+
+      <!-- 产品图 -->
+      <div class="animate-fade-in-up delay-400 relative inline-block">
+        <div class="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 mx-auto">
+          <div class="absolute inset-0 rounded-full bg-forest-400/20 blur-2xl animate-float"></div>
+          <div class="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl shadow-forest-900/50 border border-forest-400/20">
+            <img src="/soap-product.jpg" alt="净月潭皂 - 弯月造型手工皂" class="img-cover" />
+          </div>
+        </div>
+        <p class="mt-4 text-forest-200/70 text-sm">—— 净月潭 · 弯月文创皂 ——</p>
+      </div>
+
+      <!-- 向下滚动提示 -->
+      <div class="animate-fade-in delay-600 mt-12">
+        <a href="#origin" class="inline-flex flex-col items-center text-forest-300/60 hover:text-forest-200 transition-colors">
+          <span class="text-xs tracking-widest mb-2">探索更多</span>
+          <svg class="w-5 h-5 animate-bounce-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 2. 地标溯源 ==================== -->
+  <section id="origin" class="relative py-24 sm:py-32 bg-forest-50 forest-texture">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-label">
+        <span class="text-xs tracking-[0.3em] text-forest-500 uppercase font-medium">ORIGIN</span>
+      </div>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-forest-800 text-center mb-4 tracking-wide">地标溯源</h2>
+      <p class="text-center text-forest-500 text-lg mb-16 font-serif">林海秘境 · 月潭灵境</p>
+
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- 左侧图片 -->
+        <div class="relative scroll-reveal">
+          <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
+            <img src="https://coze-coding-project.tos.coze.site/coze_storage_7640791410282725414/image/generate_image_e65f3bd9-5af7-4909-aa5f-7b19d5758ed2.jpeg?sign=1810547827-f51d681a29-0-9f4ff58683bbd3c46f68cbbc1043d350b87f2420b0c4203cf0253fd448566fa5" alt="净月潭国家森林公园" class="img-cover" />
+          </div>
+          <!-- 浮动标签 -->
+          <div class="absolute -bottom-4 -right-4 sm:bottom-6 sm:right-6 bg-white/90 backdrop-blur-sm rounded-xl px-5 py-3 shadow-lg border border-forest-100">
+            <p class="text-forest-700 text-sm font-medium">国家 AAAAA 级景区</p>
+            <p class="text-forest-400 text-xs">亚洲最大人工林海</p>
+          </div>
+        </div>
+
+        <!-- 右侧文案 -->
+        <div class="space-y-6 scroll-reveal">
+          <div class="space-y-4">
+            <h3 class="text-2xl font-serif text-forest-700 flex items-center gap-3">
+              <svg class="w-6 h-6 text-forest-500 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21l4-10 4 10"/><path d="M2 21l6-12 3.5 6"/><path d="M22 21l-6-12-3.5 6"/></svg>
+              净月潭 · 长春之肺
+            </h3>
+            <p class="text-forest-600 leading-relaxed">
+              净月潭位于长春市东南部，总面积逾百平方公里，拥有亚洲最大的人工林海。这里松涛阵阵、碧水如镜，
+              四季景色各异——春赏新绿、夏拥清凉、秋染层林、冬映雪原，被誉为"喧嚣都市中的净土"。
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white/70 border border-forest-100">
+              <svg class="w-5 h-5 text-forest-500 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L6 10h3l-4 7h4L5 22h14l-4-5h4l-4-7h3L12 2z"/></svg>
+              <div><p class="text-forest-700 font-medium text-sm">森林覆盖率</p><p class="text-forest-500 text-xs">96%以上原始林海</p></div>
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white/70 border border-forest-100">
+              <svg class="w-5 h-5 text-forest-500 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C12 2 5 10 5 15a7 7 0 0014 0c0-5-7-13-7-13z"/></svg>
+              <div><p class="text-forest-700 font-medium text-sm">水域面积</p><p class="text-forest-500 text-xs">4.3km²天然潭水</p></div>
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white/70 border border-forest-100">
+              <svg class="w-5 h-5 text-forest-500 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c1.5-3 2-7 2-10S13.5 5 12 2z"/><path d="M12 2c5.5 0 10 4.5 10 10s-4.5 10-10 10"/></svg>
+              <div><p class="text-forest-700 font-medium text-sm">负氧离子</p><p class="text-forest-500 text-xs">超过城市200倍</p></div>
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white/70 border border-forest-100">
+              <svg class="w-5 h-5 text-forest-500 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 111.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1112 8H2"/><path d="M12.6 19.4A2 2 0 1015 16H2"/></svg>
+              <div><p class="text-forest-700 font-medium text-sm">四季分明</p><p class="text-forest-500 text-xs">每一季皆是风景</p></div>
+            </div>
+          </div>
+
+          <p class="text-forest-500 text-sm leading-relaxed border-l-2 border-forest-300 pl-4">
+            净月潭不仅是自然生态的宝藏，更是东北文化的精神地标。这片林海承载了几代人的记忆与情怀，
+            而净月潭皂正是将这份林间灵气凝于一丸，让远方的旅人也能触手可及。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 3. 设计理念 ==================== -->
+  <section class="relative py-24 sm:py-32 bg-forest-900 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="section-label">
+        <span class="text-xs tracking-[0.3em] text-forest-300 uppercase font-medium">DESIGN</span>
+      </div>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white text-center mb-4 tracking-wide">设计理念</h2>
+      <p class="text-center text-forest-300 text-lg mb-16 font-serif">标塑造型 · 复刻林海</p>
+
+      <!-- 产品图居中 -->
+      <div class="flex justify-center mb-16 scroll-reveal">
+        <div class="relative w-72 h-72 sm:w-80 sm:h-80">
+          <div class="absolute inset-0 rounded-full bg-forest-500/10 blur-3xl"></div>
+          <div class="relative w-full h-full rounded-2xl overflow-hidden border border-forest-600/30 shadow-2xl shadow-black/30">
+            <img src="https://coze-coding-project.tos.coze.site/coze_storage_7640791410282725414/image/generate_image_6b9e5a7d-fd40-46a6-ab01-4d0a3356dbab.jpeg?sign=1810547826-ec8e243416-0-e8914dd9207e255160364df494c374299079c9cfda58c198bd6dea710325d158" alt="净月潭皂设计细节" class="img-cover" />
+          </div>
+          <!-- 标注线 -->
+          <div class="absolute top-1/2 -right-24 hidden lg:flex items-center gap-2">
+            <span class="h-px w-16 bg-forest-400/50"></span>
+            <span class="text-forest-300 text-xs whitespace-nowrap">弯月轮廓 · LOGO原型</span>
+          </div>
+          <div class="absolute bottom-1/4 -left-28 hidden lg:flex items-center gap-2">
+            <span class="text-forest-300 text-xs whitespace-nowrap">松纹压印 · 地标印记</span>
+            <span class="h-px w-16 bg-forest-400/50"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 设计亮点网格 -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="group p-6 rounded-2xl bg-forest-800/50 border border-forest-700/50 hover:bg-forest-800/80 hover:border-forest-600/50 transition-all duration-300 scroll-reveal">
+          <div class="text-forest-300 group-hover:text-gold-400 transition-colors mb-4">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c-4 4-7 7-7 11a7 7 0 0014 0c0-4-3-7-7-11z"/><path d="M12 3c2 4 3 7 3 11a3 3 0 01-6 0c0-4 1-7 3-11z"/></svg>
+          </div>
+          <h4 class="text-white font-serif text-lg mb-1">弯月造型</h4>
+          <p class="text-gold-400/80 text-xs tracking-wider mb-3">官方 LOGO 溯源</p>
+          <p class="text-forest-300/80 text-sm leading-relaxed">以净月潭官方标识为灵感，皂体呈弯月形态，两端微翘，线条流畅自然。一丸弯月，即是地标符号。</p>
+        </div>
+        <div class="group p-6 rounded-2xl bg-forest-800/50 border border-forest-700/50 hover:bg-forest-800/80 hover:border-forest-600/50 transition-all duration-300 scroll-reveal">
+          <div class="text-forest-300 group-hover:text-gold-400 transition-colors mb-4">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c0.5 0 1-0.4 1-1 0-0.5-0.2-0.9-0.2-1.4 0-1.2 0.8-2.2 2.1-2.2H16c3.3 0 6-2.7 6-6 0-5.5-4.5-9.4-10-9.4z"/></svg>
+          </div>
+          <h4 class="text-white font-serif text-lg mb-1">森系配色</h4>
+          <p class="text-gold-400/80 text-xs tracking-wider mb-3">林海原生色彩</p>
+          <p class="text-forest-300/80 text-sm leading-relaxed">皂体采用灰绿与蓝绿渐变晕染，模拟深林苔石与月潭碧水的自然色调，每一块都是独一无二的森林画作。</p>
+        </div>
+        <div class="group p-6 rounded-2xl bg-forest-800/50 border border-forest-700/50 hover:bg-forest-800/80 hover:border-forest-600/50 transition-all duration-300 scroll-reveal">
+          <div class="text-forest-300 group-hover:text-gold-400 transition-colors mb-4">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 111.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1112 8H2"/><path d="M12.6 19.4A2 2 0 1015 16H2"/></svg>
+          </div>
+          <h4 class="text-white font-serif text-lg mb-1">专属香型</h4>
+          <p class="text-gold-400/80 text-xs tracking-wider mb-3">松风清韵调香</p>
+          <p class="text-forest-300/80 text-sm leading-relaxed">调香师以净月潭林间空气为灵感，融合松针、雪松、白桦与晨露气息，打造独一无二的"松风清韵"香型。</p>
+        </div>
+        <div class="group p-6 rounded-2xl bg-forest-800/50 border border-forest-700/50 hover:bg-forest-800/80 hover:border-forest-600/50 transition-all duration-300 scroll-reveal">
+          <div class="text-forest-300 group-hover:text-gold-400 transition-colors mb-4">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h4 class="text-white font-serif text-lg mb-1">匠心工艺</h4>
+          <p class="text-gold-400/80 text-xs tracking-wider mb-3">冷制慢皂法</p>
+          <p class="text-forest-300/80 text-sm leading-relaxed">采用传统冷制皂工艺，40天以上低温皂化成熟。皂面松树压印由匠人逐块手工脱模，保留天然亚光质感。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4. 核心成分 ==================== -->
+  <section class="relative py-24 sm:py-32 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-label">
+        <span class="text-xs tracking-[0.3em] text-forest-500 uppercase font-medium">INGREDIENTS</span>
+      </div>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-forest-800 text-center mb-4 tracking-wide">核心成分</h2>
+      <p class="text-center text-forest-500 text-lg mb-16 font-serif">森林植萃 · 清润养肤</p>
+
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- 文案侧 -->
+        <div class="order-2 lg:order-1 space-y-8 scroll-reveal">
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 mt-1"><div class="w-10 h-10 rounded-lg bg-forest-500 flex items-center justify-center text-white text-sm font-serif">松</div></div>
+            <div class="flex-1">
+              <div class="flex items-baseline gap-2 mb-1"><h4 class="text-forest-800 font-serif text-lg">松针精华</h4><span class="text-forest-400 text-xs">净月潭红松林</span></div>
+              <p class="text-forest-600 text-sm leading-relaxed">富含松香酸与维生素C，天然抑菌净化，深层清洁毛孔，赋予肌肤森林般的清爽感。</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 mt-1"><div class="w-10 h-10 rounded-lg bg-forest-400 flex items-center justify-center text-white text-sm font-serif">桦</div></div>
+            <div class="flex-1">
+              <div class="flex items-baseline gap-2 mb-1"><h4 class="text-forest-800 font-serif text-lg">白桦树汁</h4><span class="text-forest-400 text-xs">长白山白桦林</span></div>
+              <p class="text-forest-600 text-sm leading-relaxed">天然保湿因子，小分子渗透力强，补水的同时舒缓肌肤，令洗后肌肤柔润不紧绷。</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 mt-1"><div class="w-10 h-10 rounded-lg bg-forest-600 flex items-center justify-center text-white text-sm font-serif">雪</div></div>
+            <div class="flex-1">
+              <div class="flex items-baseline gap-2 mb-1"><h4 class="text-forest-800 font-serif text-lg">雪松精油</h4><span class="text-forest-400 text-xs">高海拔雪松</span></div>
+              <p class="text-forest-600 text-sm leading-relaxed">木质基调安神舒缓，平衡油脂分泌，改善肌肤暗沉，带来沉静的林间疗愈体验。</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 mt-1"><div class="w-10 h-10 rounded-lg bg-gold-500 flex items-center justify-center text-white text-sm font-serif">月</div></div>
+            <div class="flex-1">
+              <div class="flex items-baseline gap-2 mb-1"><h4 class="text-forest-800 font-serif text-lg">月见草油</h4><span class="text-forest-400 text-xs">东北平原</span></div>
+              <p class="text-forest-600 text-sm leading-relaxed">富含γ-亚麻酸，修护肌肤屏障，缓解干燥敏感，让肌肤在每一次洗护中重获新生。</p>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-forest-100">
+            <p class="text-forest-400 text-xs flex items-center gap-2">
+              <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+              全成分均通过安全检测 · 无合成色素 · 无矿物油 · 无防腐剂
+            </p>
+          </div>
+        </div>
+
+        <!-- 图片侧 -->
+        <div class="order-1 lg:order-2 relative scroll-reveal">
+          <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-square">
+            <img src="https://coze-coding-project.tos.coze.site/coze_storage_7640791410282725414/image/generate_image_5d0026f9-ad92-4071-ae4e-3916994102fd.jpeg?sign=1810547828-924e25855b-0-f7c59d07af87ff60bf23f5849cc784b93927d6899d62664e8bb6063768c4324b" alt="森林植萃原料" class="img-cover" />
+          </div>
+          <div class="absolute -top-3 -left-3 w-24 h-24 rounded-full bg-forest-100/80 backdrop-blur-sm flex items-center justify-center">
+            <div class="text-center">
+              <p class="text-forest-700 font-serif text-lg">100%</p>
+              <p class="text-forest-500 text-xs">天然植萃</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 5. 使用体验 ==================== -->
+  <section class="relative py-24 sm:py-32 bg-forest-50 forest-texture">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-label">
+        <span class="text-xs tracking-[0.3em] text-forest-500 uppercase font-medium">EXPERIENCE</span>
+      </div>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-forest-800 text-center mb-4 tracking-wide">使用体验</h2>
+      <p class="text-center text-forest-500 text-lg mb-16 font-serif">林间洗护 · 静谧舒心</p>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+        <!-- 体验场景图 -->
+        <div class="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3] scroll-reveal">
+          <img src="https://coze-coding-project.tos.coze.site/coze_storage_7640791410282725414/image/generate_image_832479e8-0c57-4572-8ff7-d125081f14b0.jpeg?sign=1810547828-93d7239279-0-5fbe7817264a27ff6f44c9a96e7ca94dd108631cbd3f6af147cc5b157cfd056f" alt="林间洗护体验" class="img-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-forest-900/70 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <p class="text-white font-serif text-xl mb-1">沐浴于林间</p>
+            <p class="text-forest-200/80 text-sm">让每一次洗护都成为与自然的对话</p>
+          </div>
+        </div>
+
+        <!-- 体验描述卡片 -->
+        <div class="space-y-5 scroll-reveal">
+          <div class="p-5 rounded-xl bg-white/80 border border-forest-100 hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-forest-500 text-white text-xs font-serif flex-shrink-0">触感</span>
+              <h4 class="font-serif text-forest-700">细润如脂，天然亲和</h4>
+            </div>
+            <p class="text-forest-600 text-sm leading-relaxed pl-11">冷制皂特有的细腻泡沫，接触肌肤即化为绵密云朵，温柔包裹每一寸肌肤，洗感清爽不干涩。</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/80 border border-forest-100 hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-forest-500 text-white text-xs font-serif flex-shrink-0">香气</span>
+              <h4 class="font-serif text-forest-700">松风入梦，层层绽放</h4>
+            </div>
+            <p class="text-forest-600 text-sm leading-relaxed pl-11">前调松针清冽，中调雪松沉稳，尾调白桦温润——如漫步净月潭林间，呼吸间皆是森林的气息。</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/80 border border-forest-100 hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-forest-500 text-white text-xs font-serif flex-shrink-0">养护</span>
+              <h4 class="font-serif text-forest-700">润而不腻，洗后柔滑</h4>
+            </div>
+            <p class="text-forest-600 text-sm leading-relaxed pl-11">植萃精华深入滋养，洗后肌肤水润弹滑，无需急于涂抹身体乳，自然光泽由内而外透出。</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/80 border border-forest-100 hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-forest-500 text-white text-xs font-serif flex-shrink-0">心境</span>
+              <h4 class="font-serif text-forest-700">一浴一静，归隐林间</h4>
+            </div>
+            <p class="text-forest-600 text-sm leading-relaxed pl-11">闭目感受松风拂面，让水声与木香带走一天的疲惫，这不只是洗护，更是一场五感的林间疗愈。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 适用场景 -->
+      <div class="text-center scroll-reveal">
+        <h3 class="font-serif text-forest-700 text-xl mb-6">适用场景</h3>
+        <div class="flex flex-wrap justify-center gap-3">
+          <span class="px-5 py-2 rounded-full bg-white border border-forest-200 text-forest-600 text-sm hover:bg-forest-500 hover:text-white hover:border-forest-500 transition-all cursor-default">晨间唤醒</span>
+          <span class="px-5 py-2 rounded-full bg-white border border-forest-200 text-forest-600 text-sm hover:bg-forest-500 hover:text-white hover:border-forest-500 transition-all cursor-default">睡前放松</span>
+          <span class="px-5 py-2 rounded-full bg-white border border-forest-200 text-forest-600 text-sm hover:bg-forest-500 hover:text-white hover:border-forest-500 transition-all cursor-default">旅途洗护</span>
+          <span class="px-5 py-2 rounded-full bg-white border border-forest-200 text-forest-600 text-sm hover:bg-forest-500 hover:text-white hover:border-forest-500 transition-all cursor-default">SPA 前奏</span>
+          <span class="px-5 py-2 rounded-full bg-white border border-forest-200 text-forest-600 text-sm hover:bg-forest-500 hover:text-white hover:border-forest-500 transition-all cursor-default">户外归来</span>
+          <span class="px-5 py-2 rounded-full bg-white border border-forest-200 text-forest-600 text-sm hover:bg-forest-500 hover:text-white hover:border-forest-500 transition-all cursor-default">四季日常</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6. 文化寓意 ==================== -->
+  <section class="relative py-24 sm:py-32 bg-forest-800 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="section-label">
+        <span class="text-xs tracking-[0.3em] text-forest-300 uppercase font-medium">CULTURE</span>
+      </div>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white text-center mb-4 tracking-wide">文化寓意</h2>
+      <p class="text-center text-forest-300 text-lg mb-16 font-serif">林海雅礼 · 静藏美好</p>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div class="space-y-6 scroll-reveal">
+          <div class="p-6 rounded-2xl bg-forest-700/50 border border-forest-600/30">
+            <h3 class="text-white font-serif text-xl mb-3 flex items-center gap-2">
+              <svg class="w-5 h-5 text-gold-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L6 10h3l-4 7h4L5 22h14l-4-5h4l-4-7h3L12 2z"/></svg>
+              一方水土一方皂
+            </h3>
+            <p class="text-forest-200/80 leading-relaxed text-sm">
+              净月潭皂不只是清洁之物，更是长春这片土地的精神载体。弯月的形状源自净月潭的"月"，
+              松纹的印记源自林海的"松"，灰绿的色泽源自苔石的"韵"——手握此皂，便是手握一片林海。
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl bg-forest-700/50 border border-forest-600/30">
+            <h3 class="text-white font-serif text-xl mb-3 flex items-center gap-2">
+              <svg class="w-5 h-5 text-gold-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13"/><path d="M3 12h18"/><path d="M7.5 8C7.5 8 9 4 12 4s4.5 4 4.5 4"/></svg>
+              见礼如见林
+            </h3>
+            <p class="text-forest-200/80 leading-relaxed text-sm">
+              精致礼盒包装，松绿烫金设计，开盒即见弯月皂体静卧其中。无论赠予远方友人还是珍存自用，
+              拆封的瞬间，仿佛推开林间小屋的窗——松风拂面，月色入怀。
+            </p>
+          </div>
+        </div>
+
+        <!-- 礼盒图片 -->
+        <div class="relative scroll-reveal">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
+            <img src="https://coze-coding-project.tos.coze.site/coze_storage_7640791410282725414/image/generate_image_62a91c88-bfa5-4645-bccb-cf0e5852f57c.jpeg?sign=1810547827-ef95b64617-0-2ae99fb7e66f5b3959ffb0bd27120a0ceb3ffe2f418b0943fc5021a365dacf07" alt="净月潭皂礼盒" class="img-cover" />
+          </div>
+          <div class="absolute -bottom-4 -left-4 bg-gold-500 rounded-xl px-5 py-3 shadow-lg">
+            <p class="text-white font-serif text-sm">雅礼之选</p>
+            <p class="text-white/80 text-xs">赠人林海 · 传情达意</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 送礼场景 -->
+      <div class="grid sm:grid-cols-3 gap-6 scroll-reveal">
+        <div class="text-center p-6 rounded-2xl bg-forest-700/30 border border-forest-600/20">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-forest-600/50 text-forest-200 mb-4">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8L12 2z"/></svg>
+          </div>
+          <h4 class="text-white font-serif text-lg mb-2">商务伴手</h4>
+          <p class="text-forest-300/80 text-sm">传递地域文化，彰显品位格调</p>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-forest-700/30 border border-forest-600/20">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-forest-600/50 text-forest-200 mb-4">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13"/><path d="M3 12h18"/><path d="M7.5 8C7.5 8 9 4 12 4s4.5 4 4.5 4"/></svg>
+          </div>
+          <h4 class="text-white font-serif text-lg mb-2">亲友馈赠</h4>
+          <p class="text-forest-300/80 text-sm">一份来自林间的温暖心意</p>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-forest-700/30 border border-forest-600/20">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-forest-600/50 text-forest-200 mb-4">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c1.5-3 2-7 2-10S13.5 5 12 2z"/><path d="M12 2c5.5 0 10 4.5 10 10s-4.5 10-10 10"/></svg>
+          </div>
+          <h4 class="text-white font-serif text-lg mb-2">旅途回忆</h4>
+          <p class="text-forest-300/80 text-sm">将净月潭的林风月色带回家</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 7. 快捷卖点 ==================== -->
+  <section class="relative py-20 sm:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-label">
+        <span class="text-xs tracking-[0.3em] text-forest-500 uppercase font-medium">HIGHLIGHTS</span>
+      </div>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-forest-800 text-center mb-4 tracking-wide">核心卖点</h2>
+      <p class="text-center text-forest-500 text-lg mb-16 font-serif">一皂尽揽 · 林海风华</p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        <!-- 官方LOGO造型 -->
+        <div class="group relative p-6 rounded-2xl border border-forest-100 bg-forest-50/50 hover:bg-forest-50 hover:border-forest-300 transition-all duration-300 text-center scroll-reveal">
+          <span class="absolute top-3 right-3 text-xs px-2 py-0.5 rounded-full bg-forest-500 text-white font-medium">独家</span>
+          <div class="text-forest-500 group-hover:text-forest-600 transition-colors mb-4 flex justify-center">
+            <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          </div>
+          <h4 class="font-serif text-forest-700 text-base mb-2">官方LOGO造型</h4>
+          <p class="text-forest-500 text-xs leading-relaxed">弯月造型源自净月潭官方标识，一皂即一地标</p>
+        </div>
+        <!-- 森系配色 -->
+        <div class="group relative p-6 rounded-2xl border border-forest-100 bg-forest-50/50 hover:bg-forest-50 hover:border-forest-300 transition-all duration-300 text-center scroll-reveal">
+          <span class="absolute top-3 right-3 text-xs px-2 py-0.5 rounded-full bg-forest-500 text-white font-medium">颜值</span>
+          <div class="text-forest-500 group-hover:text-forest-600 transition-colors mb-4 flex justify-center">
+            <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c0.5 0 1-0.4 1-1 0-0.5-0.2-0.9-0.2-1.4 0-1.2 0.8-2.2 2.1-2.2H16c3.3 0 6-2.7 6-6 0-5.5-4.5-9.4-10-9.4z"/></svg>
+          </div>
+          <h4 class="font-serif text-forest-700 text-base mb-2">森系配色</h4>
+          <p class="text-forest-500 text-xs leading-relaxed">灰绿蓝绿渐变晕染，每一块都是独一无二的森林画作</p>
+        </div>
+        <!-- 专享香型 -->
+        <div class="group relative p-6 rounded-2xl border border-forest-100 bg-forest-50/50 hover:bg-forest-50 hover:border-forest-300 transition-all duration-300 text-center scroll-reveal">
+          <span class="absolute top-3 right-3 text-xs px-2 py-0.5 rounded-full bg-forest-500 text-white font-medium">独香</span>
+          <div class="text-forest-500 group-hover:text-forest-600 transition-colors mb-4 flex justify-center">
+            <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 111.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1112 8H2"/><path d="M12.6 19.4A2 2 0 1015 16H2"/></svg>
+          </div>
+          <h4 class="font-serif text-forest-700 text-base mb-2">专享香型</h4>
+          <p class="text-forest-500 text-xs leading-relaxed">"松风清韵"独家调香，松针雪松白桦三重森林气息</p>
+        </div>
+        <!-- 独特工艺 -->
+        <div class="group relative p-6 rounded-2xl border border-forest-100 bg-forest-50/50 hover:bg-forest-50 hover:border-forest-300 transition-all duration-300 text-center scroll-reveal">
+          <span class="absolute top-3 right-3 text-xs px-2 py-0.5 rounded-full bg-forest-500 text-white font-medium">匠心</span>
+          <div class="text-forest-500 group-hover:text-forest-600 transition-colors mb-4 flex justify-center">
+            <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h4 class="font-serif text-forest-700 text-base mb-2">独特工艺</h4>
+          <p class="text-forest-500 text-xs leading-relaxed">冷制慢皂40天+匠人手工脱模，亚光质感天然质朴</p>
+        </div>
+        <!-- 文旅文创属性 -->
+        <div class="group relative p-6 rounded-2xl border border-forest-100 bg-forest-50/50 hover:bg-forest-50 hover:border-forest-300 transition-all duration-300 text-center scroll-reveal">
+          <span class="absolute top-3 right-3 text-xs px-2 py-0.5 rounded-full bg-forest-500 text-white font-medium">文创</span>
+          <div class="text-forest-500 group-hover:text-forest-600 transition-colors mb-4 flex justify-center">
+            <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h4 class="font-serif text-forest-700 text-base mb-2">文旅文创属性</h4>
+          <p class="text-forest-500 text-xs leading-relaxed">兼具实用与收藏价值，长春文旅名片级伴手礼</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 8. 底部金句 ==================== -->
+  <footer class="relative py-24 sm:py-32 bg-forest-900 overflow-hidden">
+    <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+      <!-- 装饰线 -->
+      <div class="flex items-center justify-center gap-4 mb-10">
+        <span class="h-px w-16 bg-gradient-to-r from-transparent to-forest-600"></span>
+        <svg class="w-6 h-6 text-forest-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L6 10h3l-4 7h4L5 22h14l-4-5h4l-4-7h3L12 2z"/></svg>
+        <span class="h-px w-16 bg-gradient-to-l from-transparent to-forest-600"></span>
+      </div>
+
+      <!-- 核心金句 -->
+      <blockquote class="font-serif text-2xl sm:text-3xl md:text-4xl text-white leading-relaxed tracking-wider mb-8">
+        一丸弯月藏林海
+        <br />
+        <span class="gold-gradient-text">半缕松风润日常</span>
+      </blockquote>
+
+      <p class="text-forest-400 text-sm max-w-lg mx-auto leading-relaxed mb-12">
+        每一次握住这丸弯月，都仿佛听见了净月潭的松风——
+        那是来自北纬43度的森林之息，跨越千里，润泽日常。
+      </p>
+
+      <!-- 产品图再展示 -->
+      <div class="relative w-32 h-32 mx-auto mb-10">
+        <div class="absolute inset-0 rounded-full bg-forest-500/20 blur-xl"></div>
+        <div class="relative w-full h-full rounded-xl overflow-hidden border border-forest-600/30">
+          <img src="/soap-product.jpg" alt="净月潭皂" class="img-cover" />
+        </div>
+      </div>
+
+      <!-- 品牌信息 -->
+      <div class="space-y-3">
+        <p class="text-forest-300 font-serif text-lg tracking-[0.2em]">净月潭皂</p>
+        <p class="text-forest-500 text-xs tracking-wider">JINGYUETAN ARTISAN SOAP</p>
+        <div class="flex items-center justify-center gap-4 text-forest-500/60 text-xs mt-6">
+          <span>天然植萃</span>
+          <span class="w-1 h-1 rounded-full bg-forest-600"></span>
+          <span>冷制匠心</span>
+          <span class="w-1 h-1 rounded-full bg-forest-600"></span>
+          <span>地标文创</span>
+        </div>
+      </div>
+
+      <!-- 底部装饰 -->
+      <div class="mt-12 pt-8 border-t border-forest-800">
+        <p class="text-forest-600 text-xs">&copy; 2025 净月潭文创 · 匠心打造</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== 滚动渐入脚本 ===== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var reveals = document.querySelectorAll('.scroll-reveal');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      reveals.forEach(function (el) {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
